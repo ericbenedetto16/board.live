@@ -1,0 +1,615 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import '../node_modules/foundation-sites/scss/foundation';
+@import '../node_modules/motion-ui/motion-ui'; 
+
+//Font Imports
+
+@import url("//hello.myfonts.net/count/367045"); 
+@font-face {font-family: 'Saissant';src: url('../fonts/367045_0_0.eot');src: url('../fonts/367045_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/367045_0_0.woff2') format('woff2'),url('../fonts/367045_0_0.woff') format('woff'),url('../fonts/367045_0_0.ttf') format('truetype');}
+@import url("https://use.typekit.net/iax6mpc.css");
+
+
+@include foundation-global-styles;
+// @include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+// @include foundation-float-classes;
+@include foundation-flex-classes;
+
+// @include foundation-prototype-classes;
+
+@include motion-ui-transitions; 
+@include motion-ui-animations; 
+
+ 
+
+// ------------- Custom Styles ----------------- // 
+
+
+ 
+// Private Callout
+
+.access.callout {padding: 3rem 0;margin-bottom:0; background: url(../images/house_callout_bg.jpg) center center no-repeat;color: $white; }
+.access form label {color:$white;}
+.access .close-button {color: $white;}
+.visible {display: none;}
+.access.callout p {margin: .5em 0 1em 0;}
+.access.callout h2 {margin-bottom: 1rem;} 
+.access.callout form  [type='text'], .access.callout form  [type='text']:focus {text-align: center;} 
+
+// Universal Styles
+
+a {cursor: pointer;}
+p {font-size:1rem; font-weight:300; @include breakpoint(medium) {font-size: 1.25rem;}}
+p a {font-weight:500;} 
+.text-small {font-size: 1rem;}
+.dark-bg a:active, .dark-bg a:visited, .dark-bg a:link {font-weight: 300; color: $white;}
+.dark-bg a:hover {font-weight: 500;}
+.grid-container {padding: 0 2rem; @include breakpoint(medium){padding: 0 2rem;}}
+span:focus, img:focus {outline: none !important;}
+ul {list-style-image: url(../images/dash.png);}
+.reveal {@include breakpoint(medium){width: 800px;}}
+h1.page-headline {@include breakpoint(medium){font-size: 64px;} font-size:3rem;font-weight:500;}
+h2.subhead {font-weight: 500; font-size:24px; color: $board-orange; margin-bottom: 5rem;}
+
+// Color Helpers
+ 
+.orange {color: $board-orange;}
+.dark-orange { color: darken($board-orange, 20%);}
+.white {color: $white;}
+.dark-gray {color: $dark-gray;}
+.dark-blue {color: $board-blue;}
+.light-blue {color: $board-teal;}
+.dark-background {background: $primary-color; width: 100%; color: $dark-gray;} 
+
+
+// Type Helpers
+
+.Saissant { font-family: Saissant; }
+h1.Saissant { font-size: 280px; line-height: 360px; margin-bottom: -5rem;} 
+
+
+// Button Styles
+
+input.button.hollow.dark-bg {border-width: 1px; margin-bottom:16px;margin-top:0;}
+input.button.hollow.dark-bg:hover, .button.hollow:hover {border-width: 2px; margin: -1px -1px 15px -1px;}
+
+.button.alert {color:$white;} 
+.button.alert:hover {color:$white;background:lighten($board-orange, 5%)}
+
+
+// Accordion Styles
+
+ul.accordion {list-style-image: none; -webkit-list-style-image:none;}
+ul.accordion li a.accordion-title {font-size: 1rem;}
+
+
+// Form Styles
+
+
+form.dark-bg [type='text'],form.dark-bg [type='password'],form.dark-bg [type='date'],form.dark-bg [type='datetime'],form.dark-bg [type='datetime-local'],form.dark-bg [type='month'],form.dark-bg [type='week'],form.dark-bg [type='email'],form.dark-bg [type='number'],form.dark-bg [type='search'],form.dark-bg [type='tel'],form.dark-bg [type='time'],form.dark-bg [type='url'],form.dark-bg [type='color'] {border-top: 0px solid $light-gray; border-right: 0px solid $light-gray; border-left: 0px solid $light-gray; border-bottom: 1px solid $light-gray; background: none; text-align: center; color: $white; @include breakpoint(medium){text-align:left;}}
+form.dark-bg textarea {background: $white;}
+form.dark-bg [type='text']:focus, form.dark-bg [type='password']:focus, form.dark-bg [type='date']:focus, form.dark-bg [type='datetime']:focus, form.dark-bg [type='datetime-local']:focus, form.dark-bg [type='month']:focus, form.dark-bg [type='week']:focus, form.dark-bg [type='email']:focus, form.dark-bg [type='number']:focus, form.dark-bg [type='search']:focus, form.dark-bg [type='tel']:focus, form.dark-bg [type='time']:focus, form.dark-bg [type='url']:focus, form.dark-bg [type='color']:focus {border-top: 0px solid $light-gray; border-right: 0px solid $light-gray; border-left: 0px solid $light-gray; border-bottom: 2px solid $light-gray; border-top: 0px solid $light-gray; border-right: 0px solid $light-gray; border-left: 0px solid $light-gray; background: none; text-align: center; color: $white;  outline-offset: -1px;padding-bottom:7px;@include breakpoint(medium){text-align:left;}}
+form.dark-bg select {background-image: url('../images/arrow.png'); background-repeat: no-repeat; background-size: 25px; background-position: right center;-webkit-appearance: none; appearance: none; background-color: $board-blue; color:$white; border-radius: 0px; -webkit-border-radius: 0px !important; -moz-border-radius: 0px; border-top: 0px solid $light-gray; border-right: 0px solid $light-gray; border-left: 0px solid $light-gray; border-bottom: solid 1px $white; -webkit-border-bottom-left-radius: 0px !important; -webkit-border-bottom-right-radius: 0px !important; text-align: center; margin-top:1rem; margin-bottom:1rem;}
+form.dark-bg select option {text-align: center;}
+form.dark-bg label {color: $white; margin-top:2rem;margin-bottom:1rem; text-align: center; @include breakpoint(medium){text-align:left;}}
+form input.button {margin-top:2em;}
+form fieldset {margin: 2em 0 1em 0;}
+select {background-image: url('../images/arrow.png'); background-repeat: no-repeat; background-size: 25px; background-position: right center;-webkit-appearance: none; appearance: none; border-radius: 0px; -webkit-border-radius: 0px !important; -moz-border-radius: 0px;  -webkit-border-bottom-left-radius: 0px !important; -webkit-border-bottom-right-radius: 0px !important; text-align: center; margin-top:0rem; margin-bottom:1rem;}
+.info {display:block; color:$dark-gray;position: absolute; right:0; top:0;}
+
+// Mobile Menu Styles m
+
+.mobile-menu-bar {background: $primary-color; padding: 2rem 1rem; display: none;}   
+.mobile-menu-bar .mobile-menu-icon{text-align: right; padding-right: 1rem;}
+.menu li.toolbox-menu.menu-text {color: #ffffff;}
+.header-desktop-menu .left ul.menu li {	
+	text-align:center;
+	padding-bottom: 3rem;
+		
+    @include breakpoint(medium) {  
+    text-align:left;
+    padding-bottom: 0rem;  }
+}
+
+.header-desktop-menu .right ul.menu li {	
+	text-align:center;
+	padding-bottom: 3rem; 
+	
+    @include breakpoint(medium) {
+    text-align:right; 
+    padding-bottom: 0rem;  }
+}
+
+.header-desktop-menu .top-bar.right {padding-right:0; @include breakpoint(small only){width: 100%;}}
+.header-desktop-menu .top-bar.right ul.menu {@include breakpoint(small only) {width: 100%;}}
+
+// v 1.0 Desktop Menu Styles
+
+.top-bar.header-desktop-menu .top-bar.left {padding: .45rem .5rem .55rem 0;}  
+.top-bar.header-desktop-menu {@include breakpoint(medium){padding: .75rem 0 .5rem 0;}}
+img.menu-logo{width: 30px; margin:0 .75em 0 0; @include breakpoint(medium) { width:40px; margin-right:1rem;}} 
+img.menu-type{width: 80px; margin-right:0; @include breakpoint(medium) {width:100px; margin-right:2rem;}} 
+h1.page-header {padding: 1em 0;}
+.top-bar .menu a { @include breakpoint(medium) {padding: .07em 0em .07em 4rem;}}
+.top-bar .menu a.logo-link { @include breakpoint(medium) {padding: 0;}}
+
+.top-bar a {color: $white; font-size:1rem;}
+.top-bar a:link, .top-bar a:active, .top-bar a:visited {color: $white;}
+.top-bar a:hover {color: darken( $white, 20% );}
+.top-bar a.orange {color: $board-orange; font-size:1rem;}
+.top-bar a.orange:link, .top-bar a.orange:active, .top-bar a.orange:visited {color: $board-orange;}
+.top-bar a.orange:hover {color: lighten( $board-orange, 10% );} 
+.tabs-content {border: none;}
+a:focus {outline: none;}
+.top-bar.right {padding: .75rem .5rem .5rem .5rem}
+
+.top-bar .dropdown.menu .menu a {padding: 1rem 1rem 1.5rem 1rem;}
+.dropdown a {padding-left: 0; text-align: left;}
+.dropdown.menu .is-active > a {color: $white !important; border-bottom: solid 2px $board-orange; margin-bottom: -2px; padding-left:0; margin-left: 4rem;}
+.dropdown.menu.medium-horizontal > li.opens-right > .is-dropdown-submenu  {right:auto!important; left:0px !important; top: 120%; border-width: 0px !important;padding:1rem .5rem 1rem ; min-width: 250px;}
+.dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu { left:auto!important; right:0px !important; top: 120%; border-width: 0px !important;padding:1rem .5rem 1rem ; min-width: 250px;}
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {border-color: $white  transparent transparent !important; @include breakpoint(medium){border-color: transparent transparent transparent !important;}} 
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after {border-color: $white  transparent transparent !important; @include breakpoint(medium){border-color: transparent transparent transparent !important;}}
+.menu.submenu.is-accordion-submenu.is-active {padding-top: 2rem; background: darken($board-blue, 2%);}
+.dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a {padding-bottom: .5rem;}
+.dropdown.menu.medium-horizontal > li.opens-right.is-active > .is-dropdown-submenu {left: 4rem !important;}
+.dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {@include breakpoint(medium){display:none;}}
+.dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a {padding-right: 0 !important;}
+.is-dropdown-submenu {border:0px;}
+
+// V. 1.0 Footer Styles
+
+footer p {font-size: 1rem;line-height: 2rem;}
+footer a:active, footer a:link, footer a:visited {color: $dark-gray} 
+footer a:hover { color: lighten( $dark-gray, 20% );}
+.footer-logo {width: 85px; margin-bottom: 2rem;}
+.up-arrow {vertical-align: bottom;}
+footer{padding: 3em 0 2em 0;}
+footer .FDIC {margin-top: 2.75em}
+footer .EEH {margin-top: 2em}
+footer .menu li {margin-bottom: .75rem;}
+footer .menu {@include breakpoint(small only){margin: 3em auto 1em auto;}}
+footer form.signup {@include breakpoint(small only){margin: 4em auto;}}
+#recaptcha-1 div iframe {background: none;}
+.footer-text-center {margin-top:2rem; border-top:solid 1px $dark-gray; padding-top:2rem; @include breakpoint(medium){margin-top:0;border:none;padding-top: 0;}}
+
+
+
+// Index Page Styles 
+ 
+.section-1 {padding-top: 4rem; padding-bottom: 3rem; @include breakpoint(medium) {
+	
+	background: url(../images/index_section_1.jpg) top right no-repeat; background-size: 48%; padding-top: 10rem; padding-bottom: 24rem;
+	@include breakpoint(retina){background: url(../images/index_section_1@2x.jpg) top right no-repeat; background-size: 48%; padding-top: 10rem; padding-bottom: 24rem;}
+	}}
+.section-1 img.section-1-headline {margin-bottom: 2rem; margin-top: 2rem;}
+.index-section p {margin-top: 2rem;margin-bottom: 2rem;}
+.section-1 .FDIC {margin-top:2.75rem; opacity: .5;}
+.section-1 .EEH { margin-top: 2rem; opacity: .5;} 
+.section-1 a:link, .section-1 a:active, .section-1 a:visited {color: $board-blue;font-weight: 500;}f
+.section-1 a:hover {color: lighten($board-blue, 20%)}
+
+.section-2 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}
+.section-2 {padding-top: 3rem; padding-bottom: 3rem; @include breakpoint(medium) {margin-top:8rem;}}
+.section-2 img {@include breakpoint(medium) {z-index: -99!important;position: relative;}}
+
+.section-3 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:4.25rem;}}
+.section-3 {padding-top: 3rem; padding-bottom: 3rem; @include breakpoint(medium) {margin-top:-150px;z-index: 99 !important;}}
+.section-3 img {margin-top:12rem;}
+
+.section-4 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:4.25rem;}}
+.section-4 {padding-top: 3rem; padding-bottom: 3rem; @include breakpoint(medium) {margin-top:-150px; margin-bottom: 12rem;}}
+
+.home-cta {padding: 5rem 0;}
+.home-cta h2 {font-weight: 300; color: $white; margin-bottom: 4rem;}
+.home-cta .button.hollow, .home-cta .button.hollow:hover {border-color: $board-orange;}
+ 
+.section-5 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:4.25rem;}}
+.section-5 {padding-top: 3rem; padding-bottom: 3rem; @include breakpoint(medium) {padding-top: 4rem; padding-bottom: 15rem;}} 
+.section-5 img{@include breakpoint(medium) {margin-top:3rem;}}  
+
+p.underline {border-bottom: solid 1px $board-blue; max-width: 175px; padding-bottom:.75rem;}
+p.shadow {background-color: $white; font-weight: 500; border-bottom: solid 1px $light-gray; padding-bottom: 1rem; @include breakpoint(medium){margin-left:-4rem; z-index:999 !important; position: relative; font-weight:500;box-shadow: 0 2px 10px -2px rgba(0,0,0,0.29); padding-top: .5rem; padding-bottom: .5rem; padding-left:1.5rem; font-size: 1.5rem; max-width: 300px;margin-bottom:8rem;}}
+ 
+// Refinance Page Styles
+
+.refi-1 { padding-top: 2rem; padding-bottom: 3rem;  @include breakpoint(medium) {  
+	
+	background: url(../images/refi_img_1.jpg) top right no-repeat;background-size: 28%; padding-top: 6rem; padding-bottom: 26rem;
+	
+	 @include breakpoint(retina) {background: url(../images/refi_img_1@2x.jpg) top right no-repeat ;background-size: 28%; padding-top: 6rem; padding-bottom: 26rem;}
+	
+	}}
+	
+.index-section .refi-1 p {margin-top: 2rem; margin-bottom: 2rem;}
+.index-section p {margin-top: 2rem;margin-bottom: 1rem;}
+.refi-1 .button {margin-top:1rem;}
+.refi-1 .FDIC {margin-top:2.75rem; opacity: .5;} 
+.refi-1 .EEH { margin-top: 2rem; opacity: .5;}
+ 
+.refi-2 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}
+.refi-2 {padding-top: 3rem; padding-bottom: 3rem; @include breakpoint(medium) {}}
+.refi-2 .refi-sub-2 {@include breakpoint(medium) {margin-top: 0rem;}}
+
+.refi-3 {padding-top: 0rem; padding-bottom: 5rem; @include breakpoint(medium){margin-bottom:15rem;}} 
+.refi-3 h1 {margin-bottom: 1rem;} 
+.refi-3 .purchase.callout { @include breakpoint(medium){margin-top: -2rem;}}
+
+.refi-4 blockquote {font-size:2rem; color: $white; font-weight: 300; border-width: 0px;}
+.refi-4 {padding: 5rem 0; @include breakpoint(medium) {margin-top: 8rem;}}
+.refi-4 cite {border-left: solid 1px $board-orange; color: $white; margin-top:1.5rem; padding-left: 1rem; margin-left:.25rem; font-size: 1rem;}
+.refi-4 cite:before{content:none;}
+
+
+
+// Purchase Page Styles 
+
+
+.purchase-1 {padding-top: 3rem; padding-bottom: 2rem; @include breakpoint(medium) {
+	
+	background: url(../images/purchase_hero.jpg) top right no-repeat; background-size: 35%; padding-top: 6rem; padding-bottom: 26rem;
+	@include breakpoint(retina){background: url(../images/purchase_hero@2x.jpg) top right no-repeat; background-size: 35%; padding-top: 6rem; padding-bottom: 26rem;}
+	
+	
+	}}
+.index-section p {margin-top: 2rem;margin-bottom: 2rem;}
+.purchase-1 .button {margin-bottom: 3rem; margin-top: 2rem;}
+.purchase-1 .FDIC {margin-top:5rem; opacity: .5;}
+.purchase-1 .EEH { margin-top: 4rem; opacity: .5;}
+ 
+.purchase-2 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}
+.purchase-2 {padding-top: 3rem; padding-bottom: 3rem; @include breakpoint(medium) {background: url() top left no-repeat; background-size: contain;  padding-top: 5rem; padding-bottom: 7rem;}}
+.purchase-2 .refi-sub-2 {@include breakpoint(medium) {margin-top: 45rem;}}
+
+.purchase-3 {padding-top: 5rem;padding-bottom: 5rem;}
+.purchase-3 .orange {color: $board-orange !important;} 
+.purchase-3 h1 {margin-bottom: 1rem;}
+.purchase-3 table{background:none !important; color: #ffffff !important;} 
+.purchase-3 table thead tr th {background:none; color:$white; text-align:center;}
+.purchase-3 table thead tr th.dark-gray {color: $dark-gray;} 
+.purchase-3 table tbody tr td {background:none; color:$white; padding-top: 1.5rem; padding-bottom: 1.5rem; text-align: center;font-size: 1.25rem;}
+.purchase-3 table tbody tr td.dark-gray {background:none; color:$dark-gray; padding-top: 1.5rem; padding-bottom: 1.5rem; text-align: center;font-size: 1.25rem;}
+.purchase-3 table tbody tr {padding-top: .5rem; padding-bottom: .5rem;}
+.purchase-3 table tbody tr td.border-bottom {border-bottom: 1px solid $dark-gray !important;}
+.purchase-3 table tr {background: none !important;}
+.purchase-3 tbody, .purchase-3 thead {background-color:none !important; background:none !important;}
+.purchase-3 table, .purchase-3 tbody  {border:none !important;} 
+.purchase-3 thead {border-color:$dark-gray !important; border-width: 0px 0px 1px 0px !important; border-style: solid !important;}
+.purchase-3 table tbody tr td.first, .purchase-3 table thead tr th.first {text-align: left !important; padding-left:0;}
+.purchase-3 table tbody tr td.first {font-size: 1.25rem;border-bottom: solid 1px $dark-gray; @include breakpoint(small only){font-size:1rem;} }
+.purchase-3 table .orange h4{@include breakpoint(small only){font-size:.75rem;}}
+.purchase-3 table .button { font-size: 1rem; padding: .5em 1rem;}
+.purchase-3 table tr td.first.bottom {border-bottom: 0px;}
+.purchase-3 table p.small-text {font-size: 16px; font-weight: 500;}
+
+.purchase-4 {padding-top: 0rem; padding-bottom: 3rem; @include breakpoint(medium) {background: url() top left no-repeat; padding-top: 0rem; padding-bottom: 10rem;}}
+
+.purchase-5 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}
+.purchase-5 table tbody {border: none;}
+.purchase-5 table tbody tr td {padding-top: 1.5rem; padding-bottom: 1.5rem; font-size: 1.25rem;}
+.purchase-5 table tbody tr td.left-border {padding-left:3rem; font-size: 1.25rem; border-left: solid 1px $medium-gray;}
+.purchase-5 table tbody tr {border-bottom-color: $board-orange;}
+.purchase-5 table tbody tr.no-bottom-border {border-bottom-color: $white; padding-bottom:3em !important;}
+.purchase-5 table tbody tr td.last {padding-bottom: 10rem;}
+
+.purchase.callout {padding:4rem; border: none; box-shadow: 0 2px 10px -2px rgba(0,0,0,0.29); margin-top: 10rem; margin-bottom: 20px; }
+.purchase.callout .button{@include breakpoint(medium){margin:0 0 1rem 25%;}}
+.purchase.callout h2 {font-weight: 300; font-size: 2rem; padding-bottom: 1rem;}
+.purchase.callout-1::before {position:absolute; display: block; width:100px; height:100px; left:0px; top: -115px; content: url(../images/step_1.svg); }
+.purchase.callout-2::before {position:absolute; display: block; width:100px; height:100px; left:0px; top: -177px; content: url(../images/step_2.svg); }
+.purchase-callout-container {margin-bottom: 10rem;}
+.modal.reveal h2 {}
+.modal.reveal {padding: 2em;}  
+.modal.reveal p {font-size:1em;}
+
+.purchase-callout-container h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}  
+.purchase-callout-container {margin-top:4em;}
+
+.dark-gray img {width: 26px;}
+
+ 
+// Agent Page Styles
+
+
+.BCO-X-Logo {margin-left:.5rem; margin-right:.5rem; padding-bottom:.25rem;}
+
+.agent-1 {padding-top: 3rem; padding-bottom: 2rem; @include breakpoint(medium) {
+	
+	background: url(../images/agent_section_1.jpg) top right no-repeat; background-size: 45%; padding-top: 6rem; padding-bottom: 26rem;
+	@include breakpoint(retina){background: url(../images/agent_section_1@2x.jpg) top right no-repeat; background-size: 45%; padding-top: 6rem; padding-bottom: 26rem;}
+	
+	
+	}}
+.index-section p {margin-top: 2rem;margin-bottom: 2rem;} 
+
+.agent-1 .FDIC {margin-top:5rem; opacity: .5;}
+.agent-1 .EEH { margin-top: 4rem; opacity: .5;}
+.agent-1 h2.subhead {line-height: 2.5rem; margin-top: 1rem;}
+.agent-1 input.button.agent-access {text-align: center; padding: 0; margin-top: 1rem; width:100%; @include breakpoint(medium) {margin-top:0;}}
+
+.agent-1 input {height: 55px; margin-bottom:0; }
+p.request-link {color: $dark-gray; margin-top:.5rem;}
+p.request-link a:active, p.request-link a:link, p.request-link a:visited {font-weight: 300;color: $dark-gray;}
+p.request-link a:hover {color: darken($dark-gray, 10%)}
+ 
+.agent-2 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}
+.agent-2 {padding-top: 3rem; padding-bottom: 3rem; @include breakpoint(medium) {background: url() top left no-repeat; background-size: contain;  padding-top: 5rem; padding-bottom: 10rem;}}
+.agent-2 .refi-sub-2 {@include breakpoint(medium) {margin-top: 45rem;}}
+
+.agent-3 {padding-top: 5rem;padding-bottom: 5rem;}
+.agent-3 .orange {color: $board-orange !important;}  
+.agent-3 h1 {margin-bottom: 1rem;}
+.agent-3 table{background:none !important; color: #ffffff !important;} 
+.agent-3 table thead tr th {background:none; color:$white; text-align:center;}
+.agent-3 table thead tr th.dark-gray {color: $dark-gray;} 
+.agent-3 table tbody tr td {background:none; color:$white; padding-top: 1.5rem; padding-bottom: 1.5rem; text-align: center;font-size: 1.25rem;}
+.agent-3 table tbody tr td.dark-gray {background:none; color:$dark-gray; padding-top: 1.5rem; padding-bottom: 1.5rem; text-align: center;font-size: 1.25rem;}
+.agent-3 table tbody tr {padding-top: .5rem; padding-bottom: .5rem;}
+.agent-3 table tbody tr td.border-bottom {border-bottom: 1px solid $dark-gray !important;}
+.agent-3 table tr {background: none !important;}
+.agent-3 tbody, .agent-3 thead {background-color:none !important; background:none !important;}
+.agent-3 table, .agent-3 tbody  {border:none !important;} 
+.agent-3 thead {border-color:$dark-gray !important; border-width: 0px 0px 1px 0px !important; border-style: solid !important;}
+.agent-3 table tbody tr td.first, .agent-3 table thead tr th.first {text-align: left !important; padding-left:0;}
+.agent-3 table tbody tr td.first {font-size: 1.25rem;border-bottom: solid 1px $dark-gray; @include breakpoint(small only){font-size:1rem;} }
+.agent-3 table .orange h4{@include breakpoint(small only){font-size:.75rem;}}
+.agent-3 table .button { font-size: 1rem; padding: .5em 1rem;}
+.agent-3 table tr td.first.bottom {border-bottom: 0px;}
+.agent-3 table p.small-text {font-size: 16px; font-weight: 500;}
+
+.agent-4 {padding-top: 5rem; padding-bottom: 3rem; @include breakpoint(medium) {background: url() top left no-repeat; padding-top: 0rem; padding-bottom: 10rem; margin-bottom: 8rem; margin-top:10rem;}}
+.agent-4 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem; margin-bottom: 5rem;}}
+
+.agent-5 h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}
+.agent-5 table tbody {border: none;}
+.agent-5 table tbody tr td {padding-top: 1.5rem; padding-bottom: 1.5rem; font-size: 1.25rem;}
+.agent-5 table tbody tr td.left-border {padding-left:3rem; font-size: 1.25rem; border-left: solid 1px $medium-gray;}
+.agent-5 table tbody tr {border-bottom-color: $board-orange;}
+.agent-5 table tbody tr.no-bottom-border {border-bottom-color: $white; padding-bottom:3em !important;}
+.agent-5 table tbody tr td.last {padding-bottom: 10rem;}
+
+ 
+.agent-cta {padding-top: 6rem; padding-bottom:6rem;margin-bottom: 8rem;}
+.agent-cta h2 {font-weight: 300; font-size: 2rem;}
+.agent-cta p {margin-bottom: 2rem;}
+.agent-cta a.button.hollow.dark-bg {border-color: $board-orange;}
+.agent-cta a.button.hollow.dark-bg:hover {border-color: $board-orange;}
+
+.agent-callout-container {margin-bottom: 10rem;}
+.modal.reveal h2 {}
+.modal.reveal {padding: 2em;}  
+.modal.reveal p {font-size:1em;}
+
+.agent-callout-container h1 {font-weight: 300; font-size: 2.5rem; @include breakpoint(medium) {font-size:3.5rem;}}  
+.agent-callout-container {margin-top:4em;}
+
+.dark-gray img {width: 26px;}
+
+.sam-border {border-bottom: solid 2px $board-orange;}
+.sam {margin-bottom: 8rem;}
+.sam p {line-height: 2.25rem; font-size: 1.5rem; font-weight: 300;}
+img.sams-mug {width: 221px;}
+
+// Scheduler Page Styles 
+
+.scheduler-1 {margin-top: 5rem;}
+.scheduler-1 h1 {font-weight: 300;}
+.scheduler-2 {margin-bottom:4rem;}
+.scheduler-2 form fieldset legend {font-weight: 500; font-size:1.5rem;} 
+.scheduler-2 form fieldset {margin-bottom: 4rem; margin-top: 3rem;}
+.scheduler-1 hr {margin:3rem 0;}
+.scheduler-2 hr {margin: 3rem 0;}
+#agent-form h4 {margin-top:4rem;}
+label {line-height: 3;}
+
+
+// Offer Page Styles
+
+.top-callout {width:100%; padding: 1rem 0; margin-bottom:6rem; box-shadow: 0 2px 6px 0 rgba(0,0,0,0.19);}
+.top-callout p {margin-bottom:0;}
+.offer-1 h1 {font-weight: 300;}
+.agent-disclaimer {margin-top:2rem;}
+.offer-2 {margin-bottom:4rem;}
+.offer-2 form fieldset legend {font-weight: 500; font-size:1.5rem;} 
+.offer-2 form fieldset {margin-bottom: 4rem; margin-top: 3rem;}
+.offer-1 hr {margin:3rem 0;}
+.offer-2 hr {mmargin: 3rem 0;}
+h4.in-form-header {margin: 3rem 0;}
+
+
+
+// Thank You Page Styles
+
+.thanks {padding-bottom:20rem;}
+
+
+// Private Index Styles
+ 
+.private-index {padding-top: 8rem; padding-bottom: 8rem;}
+.private-index .card {}
+
+
+
+// Index Text Rotator Styles
+
+/*Sentence*/
+.sentence{
+     font-size: 30px;
+     text-align: left;
+     
+}
+
+.sentence span {
+	font-family: Saissant, museo-sans, sans-serif;
+	font-size: 3rem;
+	margin-top: -1rem;
+}
+
+
+
+/*Wrapper*/
+
+.wrapper{
+    position: relative;
+}
+
+.wrapper h2 {font-size: 1.25rem; font-weight: 300;}
+
+
+
+/*Vertical Sliding*/
+
+
+.slidingVertical{
+	display: inline;
+	text-indent: 8px;
+	margin-top:-1rem;
+}
+.slidingVertical span{
+	animation: topToBottom 12.5s linear infinite 0s;
+	-ms-animation: topToBottom 12.5s linear infinite 0s;
+	-webkit-animation: topToBottom 12.5s linear infinite 0s;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.slidingVertical span:nth-child(2){
+	animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+}
+.slidingVertical span:nth-child(3){
+	animation-delay: 5s;
+	-ms-animation-delay: 5s;
+	-webkit-animation-delay: 5s;
+}
+.slidingVertical span:nth-child(4){
+	animation-delay: 7.5s;
+	-ms-animation-delay: 7.5s;
+	-webkit-animation-delay: 7.5s;
+}
+.slidingVertical span:nth-child(5){
+	animation-delay: 10s;
+	-ms-animation-delay: 10s;
+	-webkit-animation-delay: 10s;
+}
+
+
+/*topToBottom Animation*/
+
+@-moz-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(-50px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-webkit-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(-50px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: translateY(-50px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+} 
+
+
+// DatePicker
+
+.ui-datepicker-header {
+	background:$board-blue; color:#fff; padding:1rem;
+}
+.ui-datepicker-next {float:right;}
+
+
+
+// FAQ Section
+
+.FAQ-Section {padding-top:3rem; padding-bottom: 3rem;}
+.answers {padding-top: 3rem; padding-bottom: 3rem;}
+.accordion.faq {margin-top:3rem; margin-bottom:3rem;}
+h1.FAQ {font-weight: 300; @include breakpoint(medium){margin-bottom: 3rem;}}
+.accordion.faq a:active, .accordion.faq a:link, .accordion.faq a:visited {color: $board-blue; font-weight: 300;}
+.accordion.faq a:hover { color:lighten($board-blue, 20%);}
+.accordion.faq a.accordion-title:active, .accordion.faq a.accordion-title:link, .accordion.faq a.accordion-title:visited {background: $light-gray; font-size: 1.25rem; font-weight: 500; color: $board-orange;}
+.accordion.faq a.accordion-title:hover {color: darken($board-orange, 5%);}
+.answers h4 {margin-top: 4rem; margin-bottom: 2rem;}
+
+// Privacy 
+
+.privacy {margin-top: 5rem;}
+.privacy ol {padding-left: 1rem;}
+.privacy ol li {font-size: 1.25rem; font-weight: 500; margin-bottom: 1rem;}
+
+ 
+// Apply Form Styles
+
+.apply-form {background: $board-blue; color: $white; padding-top:2rem; padding-bottom: 2rem;}
+.apply-container {margin-top:5rem; margin-bottom:5rem;}
+.apply-button {margin-top:2rem;}
+.apply-button .button.hollow.dark-bg {border-color: $board-orange}
+.apply-button .button.hollow.dark-bg:hover {border-color: $board-orange}
+
+
+
+// Contact Page 
+
+.contact-info h3 {margin-top: 1rem;} 
+.contact-info p {font-size: 1rem;}
+.contact-section {padding-top: 3rem; padding-bottom: 5rem;}
+.contact-section form input.button {margin-top:0px;}
+
+
+// Captcha
+
+.rc-anchor-light {background: $board-blue !important;} 
